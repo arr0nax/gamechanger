@@ -159,7 +159,9 @@ function Player(difficulties) {
 Player.prototype.draw = function(canvasContext){
   canvasContext.beginPath();
   canvasContext.rect(this.xPos, this.yPos, this.height, this.width );
-  canvasContext.drawImage(playerImg, this.xPos, this.yPos, this.width, this.height);
+  // canvasContext.drawImage(playerImg, this.xPos, this.yPos, this.width, this.height);
+  canvasContext.fillStyle = 'blue';
+  canvasContext.fill();
   canvasContext.closePath();
 }
 
@@ -267,7 +269,9 @@ function Wall(xPos,yPos, width, height) {
 Wall.prototype.draw = function(canvasContext) {
   canvasContext.beginPath();
   canvasContext.rect(this.xPos, this.yPos, this.width, this.height);
-  canvasContext.drawImage(wallImg, this.xPos, this.yPos, this.width, this.height);
+  canvasContext.fillStyle = 'black';
+  canvasContext.fill();
+  // canvasContext.drawImage(wallImg, this.xPos, this.yPos, this.width, this.height);
   canvasContext.closePath();
 };
 
@@ -285,7 +289,9 @@ function Ball(xPos,yPos,width,height, dx, dy) {
 Ball.prototype.draw = function(canvasContext) {
   canvasContext.beginPath();
   canvasContext.rect(this.xPos, this.yPos, this.width, this.height);
-  canvasContext.drawImage(ballImg, this.xPos, this.yPos, this.width, this.height);
+  canvasContext.fillStyle = 'red';
+  canvasContext.fill();
+  // canvasContext.drawImage(ballImg, this.xPos, this.yPos, this.width, this.height);
   canvasContext.closePath();
 }
 
@@ -411,7 +417,9 @@ function multiShotCases(velocity, axis, bulletsArray) {
 Bullet.prototype.draw = function(canvasContext) {
   canvasContext.beginPath();
   canvasContext.rect(this.xPos, this.yPos, this.width, this.height);
-  canvasContext.drawImage(bulletImg, this.xPos, this.yPos, this.width, this.height);
+  // canvasContext.drawImage(bulletImg, this.xPos, this.yPos, this.width, this.height);
+  canvasContext.fillStyle = 'blue';
+  canvasContext.fill();
   canvasContext.closePath();
 }
 
@@ -443,7 +451,9 @@ Item.prototype.draw = function(canvasContext) {
   }
   canvasContext.beginPath();
   canvasContext.rect(this.xPos, this.yPos, this.width, this.height);
-  canvasContext.drawImage(itemImg, this.xPos, this.yPos, this.width, this.height);
+  // canvasContext.drawImage(itemImg, this.xPos, this.yPos, this.width, this.height);
+  canvasContext.fillStyle = 'orange';
+  canvasContext.fill();
   canvasContext.closePath();
 }
 
@@ -722,7 +732,9 @@ $(function(){
   var ctx = canvas.getContext("2d");
 
   var displayBgImg = function(){
-    ctx.fillStyle = ctx.createPattern(bgImg, "repeat");
+    // ctx.fillStyle = ctx.createPattern(bgImg, "repeat");
+    ctx.fillStyle = 'white';
+    ctx.fill();
     ctx.fillRect(0, 0, 600, 600);
   }
 
